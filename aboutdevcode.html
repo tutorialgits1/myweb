@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevCode</title>
+</head>
+<style>
+ body{
+    margin: 0%;
+    height: 0%;
+   background-color: rgb(10, 9, 9);
+   height: 100%;
+   width: 100%;
+ }
+.menu__link_prof{
+
+  display: inline-block;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+
+  padding: 0.7rem 2rem;
+  border-radius: 30em;
+  border-style: none;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: transparent;
+  box-shadow: 1px 1px 12px #5f5959;
+}
+.menu__link{
+  
+  display: inline-block;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  margin-left: 5px;
+  
+  padding: 0.7rem 2rem;
+  border-radius: 30em;
+  border-style: none;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: transparent;
+  box-shadow: 1px 1px 12px #5f5959;
+}
+.menu__link_prof::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transform: translateX(-101%);
+  transition: all .3s ease;
+  z-index: -1;
+}
+.menu__link::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+
+  left: 0;
+  background-color: #fff;
+  transform: translateX(-101%);
+  transition: all .3s ease;
+  z-index: -1;
+}
+.menu__link_prof:hover{
+  color: #272727;
+  transition: all .3s ease;
+}
+.menu__link:hover {
+  color: #272727;
+  transition: all .3s ease;
+}
+.menu__link_prof:hover::before {
+  transform: translateX(0);
+}
+.menu__link:hover::before {
+  transform: translateX(0);
+}
+.nav{
+  margin-left: 30px;
+  margin-top: 40px;
+}
+.header h1{
+  font-size: 70px;
+  color: rgb(255, 255, 255);
+  margin-top: 38px;
+margin-left: 140px;
+}
+
+
+.header,
+.spinner{
+  display: inline-block;
+}
+
+
+
+
+
+
+
+.dropdown {
+display: inline-block;
+height: 50px;
+width: fit-content;
+border-radius: 40px;
+margin-left: 5px;
+
+
+  
+}
+
+.dropdown-content {
+   width: 149px;
+   display: none;
+   position: absolute;
+   color: antiquewhite;
+   
+
+
+  
+  
+ 
+}
+
+.dropdown-content a {
+   color: rgb(255, 243, 243);
+   border: none;
+   text-decoration: none;
+   display: block;
+   font-family: 'Times New Roman', Times, serif;
+   text-align: center;
+   margin-bottom: 4px;
+   
+   
+}
+
+
+
+.dropdown:hover .dropdown-content {
+   display: block;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    margin-top: 10%;
+ height: 130px;
+ background-color: #020202;
+ 
+}
+footer h1{
+color: white;
+text-align: center;
+font-size: 40px;
+padding: 20PX;
+}
+
+
+
+
+
+.spinner:before {
+  transform: rotateX(60deg) rotateY(45deg) rotateZ(45deg);
+  animation: 750ms rotateBefore infinite linear reverse;
+}
+
+.spinner:after {
+  transform: rotateX(240deg) rotateY(45deg) rotateZ(45deg);
+  animation: 750ms rotateAfter infinite linear;
+}
+
+.spinner:before,
+.spinner:after {
+  top: 80px;
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  position: absolute;
+  margin-top: -5em;
+  margin-left: -5em;
+  width: 10em;
+  height: 10em;
+  transform-style: preserve-3d;
+  transform-origin: 50%;
+  transform: rotateY(50%);
+  perspective-origin: 50% 50%;
+  perspective: 340px;
+  background-size: 10em 10em;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2NnB4IiBoZWlnaHQ9IjI5N3B4IiB2aWV3Qm94PSIwIDAgMjY2IDI5NyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+CiAgICA8dGl0bGU+c3Bpbm5lcjwvdGl0bGU+CiAgICA8ZGVzY3JpcHRpb24+Q3JlYXRlZCB3aXRoIFNrZXRjaCAoaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoKTwvZGVzY3JpcHRpb24+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj4KICAgICAgICA8cGF0aCBkPSJNMTcxLjUwNzgxMywzLjI1MDAwMDM4IEMyMjYuMjA4MTgzLDEyLjg1NzcxMTEgMjk3LjExMjcyMiw3MS40OTEyODIzIDI1MC44OTU1OTksMTA4LjQxMDE1NSBDMjE2LjU4MjAyNCwxMzUuODIwMzEgMTg2LjUyODQwNSw5Ny4wNjI0OTY0IDE1Ni44MDA3NzQsODUuNzczNDM0NiBDMTI3LjA3MzE0Myw3NC40ODQzNzIxIDc2Ljg4ODQ2MzIsODQuMjE2MTQ2MiA2MC4xMjg5MDY1LDEwOC40MTAxNTMgQy0xNS45ODA0Njg1LDIxOC4yODEyNDcgMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IDE0NS4yNzczNDQsMjk2LjY2Nzk2OCBDMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IC0yNS40NDkyMTg3LDI1Ny4yNDIxOTggMy4zOTg0Mzc1LDEwOC40MTAxNTUgQzE2LjMwNzA2NjEsNDEuODExNDE3NCA4NC43Mjc1ODI5LC0xMS45OTIyOTg1IDE3MS41MDc4MTMsMy4yNTAwMDAzOCBaIiBpZD0iUGF0aC0xIiBmaWxsPSIjMDAwMDAwIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==);
+  filter: grayscale(100%) invert(100%); 
+}
+/* sitNSpin.less */
+@keyframes rotateBefore {
+  from {
+    transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+  }
+}
+
+@keyframes rotateAfter {
+  from {
+    transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+  }
+}
+
+
+.spinner {
+  position: absolute;
+  left: 90px;
+
+}
+.con_1{
+    width: fit-content;
+    height: fit-content;
+    margin-top: 5%;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content p{
+  margin-right: 60px;
+}
+.prof_con {
+  height: 40rem;
+  margin-left: 40%;
+  background: #020202;
+  width: 50rem;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 4px solid #fff;
+  box-shadow: 0 6px 10px #212121;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  
+}
+
+
+.prof_pic {
+  overflow: hidden;
+  object-fit: cover;
+  width: 5rem;
+  height: 5rem;
+  border: 4px solid #fff;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.prof_pic svg {
+  width: 2.5rem;
+  fill: currentColor;
+}
+
+.name {
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.name span {
+  display: block;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.social-media:before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 20px 0;
+  background: #fff;
+}
+
+.social-media a {
+  position: relative;
+  margin-right: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-media a:last-child {
+  margin-right: 0;
+}
+
+.social-media a svg {
+  width: 1.7rem;
+  fill: currentColor;
+  
+}
+
+
+.tooltip-social {
+  background: #3c3c3c;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 0.5rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -90%);
+  transition: all 0.2s ease;
+  z-index: 1;
+  
+}
+
+.tooltip-social:after {
+  content: " ";
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  transform: translate(-50%, 100%);
+}
+
+.social-media a .tooltip-social:after {
+  border-top-color: #262626;
+}
+
+.social-media a:hover .tooltip-social {
+  opacity: 1;
+  transform: translate(-50%, -130%);
+}
+.prof_pic img{
+  height: 90px;
+}
+.Profile{
+ margin-top: 100px;
+}
+
+.about-content{
+    margin-top: 30px;
+    text-align: center;
+    padding: 40px;
+}
+
+
+
+</style>
+<body>
+  <div class="navbar">
+  <div class="header">
+    <div class="spinner"></div>
+    <h1>DevCode</h1>
+
+  </div>
+  <div class="nav">
+   <a class="menu__link" href="homedevcode.html">Home</a>
+   <div class="dropdown">
+    <a class="menu__link_prof" href="profiledevcode.html">Profile<a>
+    <div class="dropdown-content">
+      <a class="menu__link" class="pic_nav" href="picturedevcode.html">PICTURE</a>
+      <a class="menu__link" href="videodevcode.html">VIDEOS</a>
+    </div>
+  </div>
+   
+   <a class="menu__link" href="aboutdevcode.html">About</a>
+
+  </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="con_1">
+
+   <div class="Profile">
+    <div class="prof_con">
+    <div class="prof_pic">
+       <img src="CC_20230707_203013.png" alt="">
+
+    </div>
+    <p class="name"> FRIO, RAYMART G.
+        <span><Datag>DevCode</Datag>
+        </span>
+
+    </p>
+    <div class="social-media">
+        <a href="#">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+            </svg>
+            <span class="tooltip-social">Twitter</span>
+        </a>
+        <a href="#">
+            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+            </svg>
+            <span class="tooltip-social">Instagram</span>
+        </a>
+        <a href="#">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
+            </svg>
+            <span class="tooltip-social">Facebook</span>
+        </a>
+        <a href="#">
+            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+            </svg>
+            <span class="tooltip-social">LinkedIn</span>
+        </a>
+    </div>
+    <div class="quotes">
+      <h3>"In the world of web creation, errors are just puzzles waiting to be solved. Designers and programmers, the ultimate problem solvers, turning glitches into graceful solutions."</h3>
+    
+    
+      <div class="about-content">
+  
+
+        <p>
+            Raymart G. Frio was born on March 2, 2003, is a 20-year-old resident of Tinaan, Santa Maria, Ilocos Sur. He is currently pursuing a Bachelor of Science in Information Technology, specializing in the second year of the program at Ilocos Sur Polytechnic State College in Poblacion, Santa Maria, Ilocos Sur.
+            Raymart's educational journey started at Tinaan Elementary School, where he completed his elementary education in 2008. He then proceeded to Santa Maria National High School (SMNHS), where he graduated from secondary education in 2011. Presently, he is focused on honing his skills and knowledge in the field of Information Technology at Ilocos Sur Polytechnic State College.
+            In the background of Information Technology, Raymart possesses a variety of skills and competencies. He has knowledge of using Microsoft Word, Excel, and PowerPoint, which allows him to handle a variety of school tasks. Additionally, Raymart has knowledge of programming languages such as PHP, HTML, and CSS, which allows him to build websites and web applications.
+            </p>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<footer>
+  <h1>@FrioDevcode2023</h1>
+</footer>
+
+
+<script src="vid.js"></script>
+
+</body>
+</html>
